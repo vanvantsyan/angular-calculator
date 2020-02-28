@@ -1,0 +1,59 @@
+<p>Calculator</p>
+<form [formGroup]="formGroup">
+  <dx-drop-down-box #dropDownBoxRef (onOpened)="focusOnBox()" fieldTemplate="fieldTemplate">
+    <div *dxTemplate="let data of 'fieldTemplate'">
+      <dx-text-box
+        formControlName="field"
+        [readOnly]="true"
+        (keyup.+)="getOperation('+')"
+        (keyup.-)="getOperation('-')"
+        (keyup.*)="getOperation('*')"
+        (keyup.enter)="getOperation('=')"
+        (keyup.dot)="getDecimal()"
+        (keyup.delete)="clear()"
+        (keyup.backspace)="backspace()"
+        (keyup)="keyUp($event)"
+        (keyup.1)="getNumber('1')"
+        (keyup.2)="getNumber('2')"
+        (keyup.3)="getNumber('3')"
+        (keyup.4)="getNumber('4')"
+        (keyup.5)="getNumber('5')"
+        (keyup.6)="getNumber('6')"
+        (keyup.7)="getNumber('7')"
+        (keyup.8)="getNumber('8')"
+        (keyup.9)="getNumber('9')"
+        (keyup.0)="getNumber('0')">
+      </dx-text-box>
+    </div>
+    <div *dxTemplate="let data of 'content'" (click)="focusOnBox()">
+      <button type="button" (click)="getNumber('1');">1</button>
+      <button type="button" (click)="getNumber('2')">2</button>
+      <button type="button" (click)="getNumber('3')">3</button>
+      <button type="button" (click)="getNumber('4')">4</button>
+      <button type="button" (click)="getNumber('5')">5</button>
+      <button type="button" (click)="getNumber('6')">6</button>
+      <button type="button" (click)="getNumber('7')">7</button>
+      <button type="button" (click)="getNumber('8')">8</button>
+      <button type="button" (click)="getNumber('9')">9</button>
+      <button type="button" (click)="getNumber('0')">0</button>
+      <button type="button" (click)="getOperation('+');" class="operator" value="+">+</button>
+      <button type="button" (click)="getOperation('-')" class="operator" value="-">-</button>
+      <button type="button" (click)="getOperation('*')" class="operator" value="*">&times;</button>
+      <button type="button" (click)="getOperation('/')" class="operator" value="/">&divide;</button>
+      <button type="button" (click)="getDecimal()" class="decimal" value=".">.</button>
+      <button type="button" (click)="clear()" class="all-clear" value="all-clear">C</button>
+      <button type="button" (click)="resetCurrent()" class="clear-current-sign">CE</button>
+      <button type="button" (click)="getOperation('=')" class="equal-sign" value="=">=</button>
+      <button type="button" (click)="getSquare()" class="square-sign">&radic;</button>
+      <button type="button" (click)="percentCount()" class="percent-sign">%</button>
+      <button type="button" (click)="reverseNumber()" class="plus-minus-sign">+/-</button>
+      <button type="button" (click)="powMinusOne()" class="pow-minus-one-sign">1/x</button>
+      <button type="button" (click)="backspace()" class="backspace-sign"><-</button>
+      <button type="button" (click)="memoryStore()" class="temp-save-sign">MS</button>
+      <button type="button" (click)="memoryRecall()" class="temp-read-sign">MR</button>
+      <button type="button" (click)="memoryClear()" class="temp-lear-sign">MC</button>
+      <button type="button" (click)="memoryPlus()" class="temp-plus-sign">M+</button>
+      <button type="button" (click)="memoryMinus()" class="temp-minus-sign">M-</button>
+    </div>
+  </dx-drop-down-box>
+</form>
