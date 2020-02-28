@@ -61,7 +61,6 @@ export class CalculatorComponent implements OnInit, AfterContentInit, ControlVal
   }
 
   getNumber(num: string) {
-    debugger
     if (!this.waitForSecond) {
       this.setValue((this.value === '0') ? num : this.value + num);
     } else {
