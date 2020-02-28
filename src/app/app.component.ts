@@ -10,7 +10,7 @@ export class AppComponent {
   title = 'calculator';
 
   formGroup = new FormGroup({
-    calculator: new FormControl('0')
+    calculator: new FormControl()
   });
 
   constructor() {

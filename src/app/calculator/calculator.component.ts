@@ -32,7 +32,7 @@ export class CalculatorComponent implements OnInit, AfterContentInit, ControlVal
   currentChanged = false;
   tempNumber = 0;
 
-  formGroup: FormGroup = new FormGroup({field: new FormControl()});
+  formGroup: FormGroup = new FormGroup({field: new FormControl('0')});
 
   // tslint:disable-next-line: variable-name no-input-rename
   @Input('value') value: string;
@@ -55,11 +55,13 @@ export class CalculatorComponent implements OnInit, AfterContentInit, ControlVal
   ngAfterContentInit() {
     if (this.value) {
       this.formGroup.patchValue({field: this.value}, {emitEvent: false});
+    } else {
+      this.value = this.formGroup.value.field;
     }
   }
 
   getNumber(num: string) {
-
+    debugger
     if (!this.waitForSecond) {
       this.setValue((this.value === '0') ? num : this.value + num);
     } else {
