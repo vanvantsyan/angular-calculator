@@ -1,30 +1,26 @@
 # Calculator
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.21.
+The project represents the calculator module being used in app component. 
+You can take just calculator module to your project and use it following way.
+ 
+Angular CLI version : 8.3.21.
 
-## How to Use
+
+## How to use calculator module as a library
 
 ### Step 1
-
-Install calculator library to your projects node modules:
-
-```bash
-npm install --save fc-web-library
-```
-
-### Step 2
 
 Import library to your application:
 
 ```typescript
-import { FCCalculatorModule } from 'fc-web-library/calculator';
+import { CalculatorModule } from 'fc-web-library/calculator';
 
 @ngModule({
-    imports: [FCCalculatorModule]
+    imports: [CalculatorModule]
 });
 ```
 
-### Step 3
+### Step 2
 ### Add styles to angular.json
 
  ``` json
