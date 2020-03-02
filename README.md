@@ -6,14 +6,6 @@ This library was generated with [Angular CLI](https://github.com/angular/angular
 
 ### Step 1
 
-Install calculator library to your projects node modules:
-
-```bash
-npm install --save fc-web-library
-```
-
-### Step 2
-
 Import library to your application:
 
 ```typescript
@@ -24,7 +16,7 @@ import { FCCalculatorModule } from 'fc-web-library/calculator';
 });
 ```
 
-### Step 3
+### Step 2
 ### Add styles to angular.json
 
  ``` json
