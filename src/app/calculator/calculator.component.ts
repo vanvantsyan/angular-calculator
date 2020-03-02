@@ -30,7 +30,7 @@ export class CalculatorComponent implements OnInit, AfterContentInit, ControlVal
   operator = null;
   firstOperand = null;
   currentChanged = false;
-  tempNumber = 0;
+  memoryNumber = null;
 
   formGroup: FormGroup = new FormGroup({field: new FormControl('0')});
 
@@ -127,25 +127,27 @@ export class CalculatorComponent implements OnInit, AfterContentInit, ControlVal
   }
 
   memoryStore() {
-    this.tempNumber = Number(this.value);
+    this.memoryNumber = Number(this.value);
     this.waitForSecond = true;
   }
 
   memoryRecall() {
-    this.setValue(String(this.tempNumber));
+    this.setValue(String(this.memoryNumber));
     this.waitForSecond = true;
   }
 
   memoryClear() {
-    this.tempNumber = 0;
+    this.memoryNumber = 0;
   }
 
   memoryPlus() {
-    this.tempNumber = Number(this.tempNumber) + Number(this.value);
+    this.memoryNumber = Number(this.memoryNumber) + Number(this.value);
+    this.waitForSecond = true;
   }
 
   memoryMinus() {
-    this.tempNumber = Number(this.tempNumber) - Number(this.value);
+    this.memoryNumber = Number(this.memoryNumber) - Number(this.value);
+    this.waitForSecond = true;
   }
 
   private resetCurrent() {

@@ -1,0 +1,7 @@
+.active{
+  color:red;
+  font-weight: 700;
+}
+.memory-disabled{
+  background: lightgray;
+}
